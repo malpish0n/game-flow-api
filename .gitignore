@@ -1,0 +1,33 @@
+target/
+*.class
+*.jar
+*.war
+*.ear
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# VS Code
+.vscode/
+bin/
+*.code-workspace
+
+# Logi i pliki tymczasowe
+*.log
+logs/
+temp/
+tmp/
+
+# Docker i bazy danych
+postgres-data/
+
+# Systemowe
+.DS_Store
+Thumbs.db
+
+# Spring Boot
+.mvn/wrapper/maven-wrapper.jar
