@@ -1,4 +1,10 @@
 package com.malpishon.gameflow.game;
 
-public class GameStatus {
+public enum GameStatus {
+    WISHLIST,
+    IN_PROGRESS,
+    BACKLOG,
+    COMPLETED,
+    PLATINUM,
+    ABANDONED
 }
