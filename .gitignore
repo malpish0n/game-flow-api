@@ -24,10 +24,11 @@ tmp/
 
 # Docker i bazy danych
 postgres-data/
+compose.yaml
 
 # Systemowe
 .DS_Store
 Thumbs.db
 
 # Spring Boot
-.mvn/wrapper/maven-wrapper.jar
+.mvn/wrapper/maven-wrapper.jar.idea
