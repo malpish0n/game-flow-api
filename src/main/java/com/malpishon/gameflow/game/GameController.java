@@ -1,18 +1,18 @@
 package com.malpishon.gameflow.game;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.malpishon.gameflow.external.igdb.IgdbClient;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/games")
 public class GameController {
 
     private final GameService gameService;
+    private final IgdbClient igdbClient;
 
-    public GameController(GameService gameService) {
+    public GameController(GameService gameService, IgdbClient igdbClient) {
         this.gameService = gameService;
+        this.igdbClient = igdbClient;
     }
 
     @PostMapping
@@ -20,4 +20,8 @@ public class GameController {
         return gameService.saveGame(game);
     }
 
+    @GetMapping("/search")
+    public String searchGames(@RequestParam String title) {
+        return igdbClient.searchGames(title);
+    }
 }
