@@ -31,4 +31,21 @@ compose.yaml
 Thumbs.db
 
 # Spring Boot
-.mvn/wrapper/maven-wrapper.jar.idea
+.mvn/wrapper/maven-wrapper.jar
+.idea
+
+# Java crash logs
+hs_err_pid*
+
+# Local Env Files
+.env
+.env.local
+.env.*
+
+# Maven
+dependency-reduced-pom.xml
+
+# Local Application Properties (for secrets)
+**/application-local.properties
+**/application-secret.properties
+application.properties
