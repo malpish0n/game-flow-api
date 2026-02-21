@@ -1,8 +1,12 @@
 package com.malpishon.gameflow.external.igdb;
 
+import com.malpishon.gameflow.external.igdb.dto.IgdbGameResponse;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClient;
+
+import java.util.List;
 
 @Component
 public class IgdbClient {
@@ -19,7 +23,7 @@ public class IgdbClient {
         this.restClient = RestClient.create("https://api.igdb.com/v4");
     }
 
-    public String searchGames(String title) {
+    public List<IgdbGameResponse> searchGames(String title) {
         String token = tokenService.fetchAccessToken();
 
         String query = "search \"" + title + "\"; fields name, first_release_date; limit 5;";
@@ -30,7 +34,8 @@ public class IgdbClient {
                 .header("Authorization", "Bearer " + token)
                 .body(query)
                 .retrieve()
-                .body(String.class);
+                .body(new ParameterizedTypeReference<List<IgdbGameResponse>>() {});
+
     }
 
 }

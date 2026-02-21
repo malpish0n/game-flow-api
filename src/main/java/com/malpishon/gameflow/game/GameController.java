@@ -1,7 +1,10 @@
 package com.malpishon.gameflow.game;
 
 import com.malpishon.gameflow.external.igdb.IgdbClient;
+import com.malpishon.gameflow.external.igdb.dto.IgdbGameResponse;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/games")
@@ -21,7 +24,7 @@ public class GameController {
     }
 
     @GetMapping("/search")
-    public String searchGames(@RequestParam String title) {
+    public List<IgdbGameResponse> searchGames(@RequestParam String title) {
         return igdbClient.searchGames(title);
     }
 }
