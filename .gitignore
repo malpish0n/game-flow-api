@@ -48,3 +48,4 @@ dependency-reduced-pom.xml
 # Local Application Properties (for secrets)
 **/application-local.properties
 **/application-secret.properties
+application.properties
